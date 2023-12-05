@@ -1,0 +1,45 @@
+create database orkut;
+create database instagram;
+use orkut;
+create table usuarios(
+id_usuario int primary key,
+nome varchar(250)
+);
+create table interacoes(
+id int primary key,
+id_usuario int,
+curtida int,
+amei int,
+foguinho int,
+foreign key (id_usuario) references usuarios(id_usuario)
+);
+insert into usuarios(id_usuario, nome) values
+(1, 'Joaquim'),
+(2, 'Lucas'),
+(3, 'Joao');
+insert into interacoes(id, id_usuario, curtida, amei, foguinho) values
+(1, 1, 7, 5, 6),
+(2, 2, 3, 0, 8),
+(3, 3, 4, 3, 2);
+use instagram;
+create table usuarios(
+id_usuario int primary key,
+nome varchar(250)
+);
+create table interacoes(
+id int primary key,
+id_usuario int,
+curtida int,
+amei int,
+foguinho int,
+foreign key (id_usuario) references usuarios(id_usuario)
+);
+insert into usuarios(id_usuario, nome) values
+(1, 'Morgana'),
+(2, 'Julia'),
+(3, 'Joao');
+insert into interacoes(id, id_usuario, curtida, amei, foguinho) values
+(1, 1, 10, 4, 2),
+(2, 2, 5, 3, 7),
+(3, 3, 4, 3, 2);
+
